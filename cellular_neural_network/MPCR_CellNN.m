@@ -16,9 +16,6 @@
 function MPCR_CellNN()
 
 x=im2double(rgb2gray(imread('road.jpg')));
-% x=im2double(rgb2gray(imread('input.png')));
-
-% x=rand(200);
 
 imshow(x);
 colormap gray
