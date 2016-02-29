@@ -26,8 +26,8 @@ ul = (min(min(x)));
 x = (x-ul)/(uu-ul)*2-1;
 
 
-%x0=x;
- x0=0.*x;
+% x0=x;
+x0=0.*x;
 
 % A=[0 0 0;6 3 1;0 0 0];
 % B=[0 -1 0; -1 8 -1;0 -1 0];
@@ -53,7 +53,7 @@ for j=1:1000
     x=x+dx.*dt;
         
     image((f(x)+1)*50); 
-    pause
+    pause(.25)
     drawnow
     
     
