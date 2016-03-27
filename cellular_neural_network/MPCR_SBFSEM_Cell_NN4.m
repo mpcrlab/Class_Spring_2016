@@ -1,3 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------%
+%
+% Machine Perception and Cognitive Robotics Laboratory
+%
+%     Center for Complex Systems and Brain Sciences
+%
+%              Florida Atlantic University
+%
+%------------------------------------------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------%
+%https://en.wikipedia.org/wiki/Cellular_neural_network
+%------------------------------------------------------%
 function MPCR_SBFSEM_Cell_NN4
 
 clear all
