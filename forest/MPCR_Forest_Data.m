@@ -18,7 +18,7 @@ clear all
 close all
 clc
 
-cd('/Users/williamedwardhahn/Desktop/forest/ForestTypes/')
+cd('/Users/williamedwardhahn/Documents/NN/Class_Spring_2016/forest/ForestTypes/')
 
 Data=importdata('training.csv');
 
@@ -59,11 +59,11 @@ pause
 Train_Data=whiten_patches(Train_Data);
 Test_Data=whiten_patches(Test_Data);
 
-% subplot(211)
-% imagesc(Train_Data)
-% subplot(212)
-% imagesc(Test_Data)
-
+subplot(211)
+imagesc(Train_Data)
+subplot(212)
+imagesc(Test_Data)
+pause
 
 D=Train_Data;
 
@@ -215,3 +215,13 @@ imagesc(mat);            %# Create a colored plot of the matrix values
 
 end
 
+
+
+
+
+% 
+% Train_Data=Train_Data-mean(Train_Data(:));
+% Test_Data=Test_Data-mean(Test_Data(:));
+% 
+% Train_Data=Train_Data/std(Train_Data(:));
+% Test_Data=Test_Data/std(Test_Data(:));

@@ -34,6 +34,7 @@ Test_Labels1=Data.textdata(2:end,1);
 Test_Data=Data.data';
 
 
+
 Test_Labels=zeros(size(Test_Labels1,1),1);
 Train_Labels=zeros(size(Train_Labels1,1),1);
 
@@ -48,14 +49,17 @@ Test_Labels(strcmp(Test_Labels1,'d '))=3;
 Test_Labels(strcmp(Test_Labels1,'o '))=4;
 
 
-% subplot(211)
-% imagesc(Train_Data)
-% subplot(212)
-% imagesc(Test_Data)
+subplot(211)
+imagesc(Train_Data)
+subplot(212)
+imagesc(Test_Data)
 
+pause
 
 Train_Data=whiten_patches(Train_Data);
 Test_Data=whiten_patches(Test_Data);
+
+X=X-mean(X(:));
 
 % subplot(211)
 % imagesc(Train_Data)
@@ -65,33 +69,40 @@ Test_Data=whiten_patches(Test_Data);
 
 D=Train_Data;
 
+r=[];
+
 for i=1:size(Test_Data,2)
     
     
     y=Test_Data(:,i);
     
-    a=BP(0.5,D,y);
     
-%     a=LCA(0.5,D,y);
+    a=BP(3,D,y);
+    
+%     a=LCA(5,D,y);
    
     a=abs(a);
     subplot(411)
     bar(a)
     
-    b=[]
-    for j=1:4
     
-        b=[b sum(abs(a(Train_Labels==j)))];  
-        
-    end    
-    subplot(412)
-    bar(b)
+%     b=[]
+%     for j=1:4
+%     
+%         b=[b sum(abs(a(Train_Labels==j)))];  
+%         
+%     end    
+%     subplot(412)
+%     bar(b)
         
     [b1,b2]=max(a);
     
     [Train_Labels(b2) Test_Labels(i)]
     
-    pause
+    r=[r Train_Labels(b2)==Test_Labels(i)];
+    
+    sum(r)/length(r)
+    
     
     
 end
@@ -151,12 +162,12 @@ function [a, u] = LCA(lambda,D,y)
 
 
 
-d=0.001;
+d=0.01;
 
 u = zeros(size(D,2),1);
 a = u;
 
-while norm(a,1)<2*lambda %sum(a>0)<3 %
+for i =1:100
     
     
     a = ( u - sign(u).*(lambda) ) .* ( abs(u) > (lambda) );
