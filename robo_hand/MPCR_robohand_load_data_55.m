@@ -12,13 +12,10 @@
 %------------------------------------------------------%
 function MPCR_robohand_load_data_55
 
+clear all; close all; clc;
 
-
-clear all
-close all
-clc
-
-cd('/Users/williamedwardhahn/Desktop/robohand')
+cd('~/hdd/Insync/MPCR_Data_Analysis/S001E01R01-03');
+% cd('/Users/williamedwardhahn/Desktop/robohand')
 
 Data_Left=load('Robohand_EEG_Data_Left.mat');
 Data_Right=load('Robohand_EEG_Data_Right.mat');
@@ -74,14 +71,14 @@ for j=1:100
         [b1,b2]=sort(b,'descend');
         
 
-        [b2(1) i]
+%         [b2(1) i]
         
          
         cm(i,b2(1))=cm(i,b2(1))+1;
         
         
         r=[r b2(1)==i];
-        sum(r)/length(r)
+%         sum(r)/length(r)
 %         [sum(r) length(r)]
         
         
@@ -103,7 +100,8 @@ for j=1:100
     
     
 end
-
+sum(r)/length(r)
+cm
 end
 
 
