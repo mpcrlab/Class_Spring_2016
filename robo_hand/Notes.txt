@@ -7,3 +7,17 @@ Attempted different time epochs of 1s and 1.5s. Both performed worse than the or
 Made a new filter script based on the origional template for loading and whitening the data. This also decreased performace. 
 
 Appears raw data is the best thing to feed the model. Next step is to try to implement some of the tweaks found in the research articles. 
+
+
+[April 17, 2016]
+Several tests were conducted between all of the different classes. 
+3 class Left-Right-Rest was classified with 55.8% accuracy. 
+General motion (Left&Right) vs Rest was classified with 67% accuracy. 
+Left-Rest was classified with 72.95% accuracy. 
+Right-Rest was classified with 58.45% accuracy. 
+
+Definitely need some improvements. The inclusion of the rest class always makes the problem more difficult. 
+New algorithms and dictionary optimization could be useful. Also, better preprocessing might help, although it seemed to have a negative impact previously. 
+
+
+
