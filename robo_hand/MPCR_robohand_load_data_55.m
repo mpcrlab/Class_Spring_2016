@@ -17,8 +17,8 @@ clear all; close all; clc;
 cd('~/hdd/Insync/MPCR_Data_Analysis/S001E01R01-03');
 % cd('/Users/williamedwardhahn/Desktop/robohand')
 
-Data_Left=load('Robohand_EEG_Data_Left.mat');
-Data_Right=load('Robohand_EEG_Data_Right.mat');
+Data_Left=load('Robohand_EEG_Data_Right.mat');
+Data_Right=load('Robohand_EEG_Data_Rest.mat');
 
 Data_Left_0=Data_Left.Data;
 Data_Right_0=Data_Right.Data;
@@ -57,7 +57,8 @@ for j=1:100
         
 %         b1=[sum(a(1:end/2)) sum(a(end/2+1:end))];
         
-        b=[max(a(1:end/2)) max(a(end/2+1:end))];
+%         b=[max(a(1:end/2)) max(a(end/2+1:end))];
+        b=[max(a(1:60)) max(a(61:end))];
         
 %         b3=[sum(a(1:end/2)>0) sum(a(end/2+1:end)>0)];
         
