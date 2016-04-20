@@ -17,8 +17,11 @@ clear all; close all; clc;
 cd('~/hdd/Insync/MPCR_Data_Analysis/S001E01R01-03');
 % cd('/Users/williamedwardhahn/Desktop/robohand')
 
-Data_Left=load('Robohand_EEG_Data_Right.mat');
-Data_Right=load('Robohand_EEG_Data_Rest.mat');
+Data_Left=load('Robohand_EEG_Data_Left.mat');
+Data_Right=load('Robohand_EEG_Data_Right.mat');
+% Data_Left=load('Raw_Left_Vect.mat');
+% Data_Right=load('Raw_Right_Vect.mat');
+
 
 Data_Left_0=Data_Left.Data;
 Data_Right_0=Data_Right.Data;
