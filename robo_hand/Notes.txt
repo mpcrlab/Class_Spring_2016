@@ -19,5 +19,5 @@ Right-Rest was classified with 58.45% accuracy.
 Definitely need some improvements. The inclusion of the rest class always makes the problem more difficult. 
 New algorithms and dictionary optimization could be useful. Also, better preprocessing might help, although it seemed to have a negative impact previously. 
 
-
+[April 19, 2016]
 
