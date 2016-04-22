@@ -20,4 +20,4 @@ Definitely need some improvements. The inclusion of the rest class always makes 
 New algorithms and dictionary optimization could be useful. Also, better preprocessing might help, although it seemed to have a negative impact previously.
 
 [April 19, 2016]
-Did some stuff (Testing something)
+Did some stuff (Testing matching pursuit algorims)
