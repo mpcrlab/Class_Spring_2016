@@ -10,7 +10,7 @@
 %------------------------------------------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------------------------------------------------------%
-function MPCR_robohand_load_data_55
+function MPCR_robohand_load_data_55_3class
 
 clear all; close all; clc;
 
@@ -19,36 +19,39 @@ cd('~/hdd/Insync/MPCR_Data_Analysis/S001E01R01-03');
 
 Data_Left=load('Robohand_EEG_Data_Left.mat');
 Data_Right=load('Robohand_EEG_Data_Right.mat');
-% Data_Left=load('Raw_Left_Vect.mat');
-% Data_Right=load('Raw_Right_Vect.mat');
-
+Data_Rest=load('Robohand_EEG_Data_Rest.mat');
 
 Data_Left_0=Data_Left.Data;
-% Data_Left_0=Data_Left_0(:,1:end/2);
 Data_Right_0=Data_Right.Data;
+Data_Rest_0=Data_Rest.Data;
+
+% Data_Rest_0 = Data_Rest_0(:,1:60);
 
 r=[];
-cm=zeros(2,2);
+cm=zeros(3,3);
 
 
 for j=1:100
     
     Data_Left=Data_Left_0(:,randperm(size(Data_Left_0,2)));
-%     Data_Left=Data_Left(:,1:end/2);
     Data_Right=Data_Right_0(:,randperm(size(Data_Right_0,2)));
+    Data_Rest=Data_Rest_0(:,randperm(size(Data_Rest_0,2)));
     
-    y1=Data_Left(:,1);
-    y2=Data_Right(:,1);
+    y1=Data_Left(:,1); % y1
+    y2=Data_Right(:,1); % y2
+    y3=Data_Rest(:,1);
       
-    D=double([Data_Left(:,2:end) Data_Right(:,2:end)]);
-    
-    for i=[1 2]
+    D=double([Data_Left(:,2:end) Data_Right(:,2:end) Data_Rest(:,2:end)]);
+%     D=double([Data_Right(:,2:end) Data_Left(:,2:end) Data_Rest(:,2:end)]);
+    for i=[1 2 3]
         
         
         if i ==1
             y=double(y1);
-        else
+        elseif i == 2
             y=double(y2);
+        else 
+            y=double(y3);
         end
         
 
@@ -63,7 +66,9 @@ for j=1:100
 %         b1=[sum(a(1:end/2)) sum(a(end/2+1:end))];
         
 %         b=[max(a(1:end/2)) max(a(end/2+1:end))];
-        b=[max(a(1:60)) max(a(61:end))];
+        b=[max(a(1:size(Data_Left,2)-1)) max(a(size(Data_Left,2):size(Data_Left,2)+size(Data_Right,2)-1)) max(a(size(Data_Left,2)+size(Data_Right,2):end))];
+            
+            
         
 %         b3=[sum(a(1:end/2)>0) sum(a(end/2+1:end)>0)];
         

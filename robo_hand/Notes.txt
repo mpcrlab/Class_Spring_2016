@@ -1,9 +1,23 @@
 
 [April 13, 2016]
-Using the raw data with 2 second epochs, the first setup resulted in about 70% accuracy. One class was slightly more dominant than the other (think left dominated right). 
+Using the raw data with 2 second epochs, the first setup resulted in about 70% accuracy. One class was slightly more dominant than the other (think left dominated right).
 
-Attempted different time epochs of 1s and 1.5s. Both performed worse than the origional 2s epoch. Would a 3s epoch be better than? 
+Attempted different time epochs of 1s and 1.5s. Both performed worse than the original 2s epoch. Would a 3s epoch be better than?
 
-Made a new filter script based on the origional template for loading and whitening the data. This also decreased performace. 
+Made a new filter script based on the original template for loading and whitening the data. This also decreased performance.
 
-Appears raw data is the best thing to feed the model. Next step is to try to implement some of the tweaks found in the research articles. 
+Appears raw data is the best thing to feed the model. Next step is to try to implement some of the tweaks found in the research articles.
+
+
+[April 17, 2016]
+Several tests were conducted between all of the different classes.
+3 class Left-Right-Rest was classified with 55.8% accuracy.
+General motion (Left&Right) vs Rest was classified with 67% accuracy.
+Left-Rest was classified with 72.95% accuracy.
+Right-Rest was classified with 58.45% accuracy.
+
+Definitely need some improvements. The inclusion of the rest class always makes the problem more difficult.
+New algorithms and dictionary optimization could be useful. Also, better preprocessing might help, although it seemed to have a negative impact previously.
+
+[April 19, 2016]
+Did some stuff (Testing matching pursuit algorithms)
