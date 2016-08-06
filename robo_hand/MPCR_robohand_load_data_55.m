@@ -21,6 +21,7 @@ Data_Left=load('Robohand_EEG_Data_Left.mat');
 Data_Right=load('Robohand_EEG_Data_Right.mat');
 
 Data_Left_0=Data_Left.Data;
+% Data_Left_0=Data_Left_0(:,1:end/2);
 Data_Right_0=Data_Right.Data;
 
 r=[];
@@ -30,6 +31,7 @@ cm=zeros(2,2);
 for j=1:100
     
     Data_Left=Data_Left_0(:,randperm(size(Data_Left_0,2)));
+%     Data_Left=Data_Left(:,1:end/2);
     Data_Right=Data_Right_0(:,randperm(size(Data_Right_0,2)));
     
     y1=Data_Left(:,1);

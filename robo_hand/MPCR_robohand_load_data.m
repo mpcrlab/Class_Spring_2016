@@ -29,7 +29,7 @@ who
 size(EEG.data)
 
 D=EEG.data;
-
+D = D(1:32,:,:);
 % Take the first second only:
 % D=D(:,1:750,:);
 
@@ -75,7 +75,7 @@ cd('~/hdd/Insync/MPCR_Data_Analysis/S001E01R01-03');
 %cd('/Users/williamedwardhahn/Desktop/robohand')
 
 
-load('raw_Right.mat')
+load('raw_Rest.mat')
 
 
 who
@@ -83,7 +83,7 @@ who
 size(EEG.data)
 
 D=EEG.data;
-
+D = D(1:32,:,:);
 % Take the first second only:
 % D=D(:,1:750,:);
 
@@ -115,7 +115,7 @@ imagesc(D2)
 
 Data=D2;
 
-save('Robohand_EEG_Data_Right.mat','Data')
+save('Robohand_EEG_Data_Rest.mat','Data')
 
 
 
